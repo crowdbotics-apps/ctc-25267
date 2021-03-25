@@ -23,8 +23,16 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
-    group = models.ManyToManyField(
-        "course.Group",
+    email = models.EmailField(
+        null=True,
         blank=True,
-        related_name="user_group",
+        max_length=254,
+    )
+    last_name = models.TextField(
+        null=True,
+        blank=True,
+    )
+    first_name = models.TextField(
+        null=True,
+        blank=True,
     )
